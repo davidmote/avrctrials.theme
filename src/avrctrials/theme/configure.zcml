@@ -5,7 +5,9 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="avrctrials.theme">
 
-  <five:registerPackage package="." initialize=".initialize" />
+  <includeDependencies package="." />
+
+  <plone:static type="theme" directory="static" />
 
   <genericsetup:registerProfile
       name="default"
