@@ -1,0 +1,18 @@
+/* Style for IE8 and lower only - cascades from IE8 to lower */
+
+.radio, .checkbox { background:none; border:0; cursor:hand; }
+
+/* SHARED
+------------------------------------------------------------------------------------- */
+#header-search input { padding:4px 0 0 3px; height:12px; }
+#header-search .btn { filter:alpha(opacity=0); }
+
+.tbl-generic th { text-align:left; }
+
+/* COMPONENTS (WIDGETS) - [ .component- ] 
+------------------------------------------------------------------------------------- */
+.component-banner .mask { filter:alpha(opacity=65); }
+
+/* BUTTON STYLES - [ .btn- ] 
+------------------------------------------------------------------------------------- */
+.btn1 { padding-top:4px; padding-bottom:3px; }

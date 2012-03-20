@@ -1,0 +1,98 @@
+/* PRINT STYLES
+------------------------------------------------------------------------------------- */
+body { color:#000; font:normal 12pt/18pt arial,sans-serif; text-align:left; background:none; }
+
+img { border:0; }
+
+a:link { color:#589bbe; text-decoration:underline; }
+a:visited { color:#666; text-decoration:underline; }
+
+ul, ol { margin:10px 0 10px 15px; padding:0; }
+li { margin:5px 0; padding:0; }
+
+/* Headlines - Defaults */
+h1, .h1 { margin:0 0 14px; color:#2d84af; font:bold 21px/24px arial,sans-serif; }
+h2, .h2 { margin:0 0 7px; color:#2d84af; font:bold 18px/21px arial,sans-serif; }
+h3, .h3 { margin:0 0 0; color:#2d84af; font:bold 14px/16px arial,sans-serif; }
+h4, .h4 { margin:0 0 15px; color:#2d84af; font:bold 12px/14px arial,sans-serif; }
+h5, .h5 { margin:0 0 15px; color:#2d84af; font:bold 11px/13px arial,sans-serif; }
+h6, .h6 { margin:0 0 15px; color:#2d84af; font:bold 10px/12px arial,sans-serif; }
+
+
+/* SHARED ITEMS
+------------------------------------------------------------------------------------- */
+#logo { margin:0 0 15px; display:block; }
+.site-title { margin:0 0 25px; border-bottom:1px solid #ccc; }
+
+.content { width:99%; float:left; display:inline; }
+.content p { margin:0 0 19px; }
+.content .alt { margin:0; }
+.col { margin:0 0 20px; }
+
+#footer { margin:35px 0 0; padding:5px 0 0; font-size:.9em; clear:left; border-top:1px solid #ccc; }
+
+
+/* HOME PAGE
+------------------------------------------------------------------------------------- */
+/* Homepage Banner (See generic component styles: .component-banner) */
+#h-banner { height:273px; }
+#h-banner .caption { width:380px; height:273px; line-height:20px; }
+#h-banner .caption div { padding:25px 20px 20px; }
+#h-banner .mask { display:none; }
+
+#h-banner-nomask .caption { top:75px; width:366px; color:#2d84af; font:normal 18px/27px arial,sans-serif; text-align:center; background:#2d84af; }
+#h-banner-nomask .caption div { padding:18px 30px 16px; }
+#h-banner-nomask .caption p { margin:0; }
+
+
+/* COMPONENTS (WIDGETS) - [ .component- ] 
+------------------------------------------------------------------------------------- */
+/* Banner w/ Caption (See homepage) */
+.component-banner { position:relative; margin:0 0 16px; z-index:1; }
+.component-banner .caption { position:absolute; top:0; left:0; overflow:hidden; z-index:3; }
+.component-banner img { float:left; display:inline; }
+.component-banner .mask { display:none; }
+.component-banner h1 { color:#00245d; }
+
+/* Image w/ Indented Text (See 3 column layout 'sidebar' feature */
+.component-feature { border:2px solid #579dbf; }
+.component-feature .feature-image { margin:0 20px 0 0; padding:0; float:left; display:inline; }
+.component-feature .feature-text { padding:16px 20px 7px; line-height:20px; }
+.component-feature p { margin:0 0 5px; }
+.component-feature .title { color:#00245d; font:bold 18px/20px arial,sans-serif; }
+
+
+/* LIST STYLES - [ .list- ] 
+------------------------------------------------------------------------------------- */
+/* Bio List */
+.list-bio { margin:0; }
+.list-bio li { padding:0 10px 0 0; list-style:none; line-height:27px; }
+.list-bio img { margin:9px 10px 10px 0; float:left; display:inline; }
+
+/* Date List */
+.list-date { margin:0 0 0 5px; }
+.list-date li { position:relative; margin:0 0 16px; padding:0; list-style:none; background:none; }
+.list-date span { margin:0 20px 0 0; width:65px; float:left; display:inline; }
+.list-date a { float:left; display:inline; }
+
+/* 'Read More' List */
+.list-more { margin:0; }
+.list-more li { margin:0 0 16px; list-style:none; background:none; }
+.list-more p { margin:0; }
+
+/* List w/ Square Bullet */
+.list-square { margin:0 0 19px 24px; }
+.list-square li { padding-left:10px; line-height:20px; }
+
+
+/* MISC. CLASSES & IDS
+------------------------------------------------------------------------------------- */
+.floatleft { margin:0 10px 5px 0; position:relative; float:left; }
+.floatright { margin:0 0 5px 10px; position:relative; float:right; }
+
+/* Clearfix */
+.clearfix:after, .content:after, .component-banner:after, .component-feature:after, .component-intro:after, .list-bio li:after, .list-date li:after, #footer ul:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+
+/* HIDE ITEMS
+------------------------------------------------------------------------------------- */
+#portal, #nav, #tertnav, #header-search, #breadcrumb, #subnav, #footer ul, .hide, a.more, .pint, .btn { display:none; }

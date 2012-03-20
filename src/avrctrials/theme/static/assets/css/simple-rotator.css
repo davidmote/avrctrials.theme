@@ -1,0 +1,23 @@
+div.rotator {
+	width:513px; 
+	height:273px;
+	float:left;
+	display: none;
+}
+
+div.rotator ul {
+	padding:0;
+	margin:0;
+}
+
+div.rotator ul li {
+	float:left;
+	position:absolute;
+	list-style: none;
+	background-image:none;
+	padding:0;
+}
+
+div.rotator ul li.show {
+	z-index:1;
+}

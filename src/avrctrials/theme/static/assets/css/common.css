@@ -1,0 +1,408 @@
+/* UCSD School of Medicine | D.Sargent | PINT (www.pint.com) */
+
+/* BASIC ELEMENTS
+------------------------------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, caption { margin:0; padding:0; }
+
+table, th, td { margin:0; }
+
+html { min-height:100%; padding:0 0 1px; }
+
+body { min-width:990px; color:#333; font:normal 12px/24px arial,sans-serif; text-align:center; background:#e8e8e8; }
+table, th, td { color:#333; font:normal 12px/15px arial,sans-serif; }
+input, td input, select, td select, textarea, td textarea { color:#ccc; font:normal 12px/15px arial,sans-serif; }
+label[for] { cursor:pointer; }
+fieldset { border:0; }
+legend { display:none; }
+
+a img, :link img, :visited img { border:none; }
+
+a:link { color:#589bbe; text-decoration:none; font-weight:bold; }
+a:visited { color:#589bbe; text-decoration:none; }
+a:hover, a:active { color:#589bbe; text-decoration:underline; }
+
+abbr { border-bottom:1px dotted #ccc; cursor:help; }
+em { font-style:italic; }
+
+hr { margin:10px 0; padding:0; width:100%; height:1px; color:#e8e7e4; font-size:1px; overflow:hidden; clear:both; background:none; border:1px solid #e8e7e4; border-width:1px 0px 0px; }
+
+ul { margin:0 0 12px 15px; }
+ol { margin:0 0 12px 18px; }
+
+/* Headlines - Defaults */
+h1, .h1 { margin:0 0 14px; color:#2d84af; font:bold 21px/24px arial,sans-serif; }
+h2, .h2 { margin:0 0 7px; color:#4d4d4f; font:bold 18px/21px arial,sans-serif; }
+h3, .h3 { margin:0 0 0; color:#4d4d4f; font:bold 14px/16px arial,sans-serif; }
+h4, .h4 { margin:0 0 15px; color:#4d4d4f; font:bold 12px/14px arial,sans-serif; }
+h5, .h5 { margin:0 0 15px; color:#4d4d4f; font:bold 11px/13px arial,sans-serif; }
+h6, .h6 { margin:0 0 15px; color:#4d4d4f; font:bold 10px/12px arial,sans-serif; }
+
+
+/* SHARED
+------------------------------------------------------------------------------------- */
+.inner { position:relative; margin:0 auto; width:990px; text-align:left; }
+
+.wrap { background:url(../images/bg-wrap-tile.png) repeat-y 50% 0; }
+.wrap .wrap { background:url(../images/bg-wrap-top.png) no-repeat 50% 0; }
+.wrap .inner { padding:161px 0 0; }
+
+#header { position:absolute; top:0; left:0; width:100%; height:161px; line-height:15px; background:none; z-index:50; }
+
+.logo { position:absolute; top:29px; left:4px; width:258px; height:95px; background:url(../images/bg-sprite-8.png) no-repeat 0 0; border-right:1px solid #fff; z-index:60; }
+#logo-health { background-position:-600px 0; }
+.logo img { display:none; }
+
+.site-title { position:absolute; top:64px; left:281px; color:#fff; font:bold 24px/27px arial,sans-serif; }
+#split-title { top:55px; }
+.site-title h1 { color:#fff; font:bold 24px/27px arial,sans-serif; }
+.site-title span { display:block; color:#00245d; font:bold 13px/15px arial,sans-serif; padding-top:5px; }
+
+/* NAVIGATION (CSS ONLY DROPDOWNS)
+------------------------------------------------------------------------------------- */
+/* Main Nav - Specific (Must also have .nav on element) 
+   
+   Several classes, .nav5-8, have been pre-created based on whether you have more or fewer navigation items. 
+   Please see your template to determine which class is being used and change if necessary.
+   .nav5 allows for the fewest navigation items (around 5), .nav8 allows for the most (around 8, depending on word length).
+*/
+.nav { position:absolute; top:124px; left:0; margin:0; width:990px; height:37px; }
+.nav li { position:relative; width:123px; height:37px; float:left; display:inline; list-style:none; text-align:center; font:bold 12px/15px arial,sans-serif; background:#77afcb; }
+#nav5 li { width:198px; }
+#nav6 li { width:165px; }
+#nav7 li { width:141px; }
+#nav8 li { width:123px; }
+.nav a { position:relative; width:122px; padding:10px 0 0; height:25px; display:block; color:#fff; text-decoration:none; text-transform:uppercase; border:1px solid #adcedf; border-width:1px 1px 1px 0; cursor:pointer; }
+#nav5 a { width:197px; }
+#nav6 a { width:164px; }
+#nav7 a { width:140px; }
+#nav8 a { width:122px; }
+#nav8 .last a { width:128px; }
+.nav .last a { width:128px; border-width:1px 0; }
+.nav a:hover { zoom:1; color:#16366b; text-decoration:none; }
+.nav .hover a { color:#16366b; }
+
+/* FIRST LEVEL DROP DOWNS */
+.nav li ul { margin:0; display:none; }
+.nav li li { float:none; display:block; text-align:left; }
+.nav li:hover ul, .nav li a:hover ul { position:absolute; top:36px; left:0; width:122px; display:block; border-top:1px solid #adcedf; }
+#nav5 li:hover ul, #nav5 li a:hover ul { width:197px; }
+#nav6 li:hover ul, #nav6 li a:hover ul { width:164px; }
+#nav7 li:hover ul, #nav7 li a:hover ul { width:140px; }
+#nav8 li:hover ul, #nav8 li a:hover ul { width:122px; }
+.nav .last:hover ul, .nav .last a:hover ul { width:128px; }
+
+.nav li:hover li, .nav li a:hover li { padding:0; width:122px !important; height:auto; }
+#nav5 li:hover li, #nav5 li a:hover li { width:197px !important; }
+#nav6 li:hover li, #nav6 li a:hover li { width:164px !important; }
+#nav7 li:hover li, #nav7 li a:hover li { width:140px !important; }
+#nav8 li:hover li, #nav8 li a:hover li { width:122px !important; }
+.nav .last:hover li, .nav .last a:hover li { width:165px !important; }
+#nav5 .last:hover li, #nav5 .last a:hover li { width:198px !important; }
+#nav6 .last:hover li, #nav6 .last a:hover li { width:165px !important; }
+#nav7 .last:hover li, #nav7 .last a:hover li { width:144px !important; }
+#nav8 .last:hover li, #nav8 .last a:hover li { width:128px !important; }
+
+.nav li:hover li a, .nav li a:hover li a { padding:5px 10px 7px; width:102px !important; height:auto; display:block; color:#fff; text-transform:none; border:1px solid #adcedf; border-width:0 0 1px }
+#nav5 li:hover li a, #nav5 li a:hover li a { width:177px !important; }
+#nav6 li:hover li a, #nav6 li a:hover li a { width:144px !important; }
+#nav7 li:hover li a, #nav7 li a:hover li a { width:120px !important; }
+#nav8 li:hover li a, #nav8 li a:hover li a { width:102px !important; }
+.nav .last:hover li a, .nav .last a:hover .last a { width:145px !important; }
+#nav5 .last:hover li a, #nav5 .last a:hover .last a { width:178px !important; }
+#nav6 .last:hover li a, #nav6 .last a:hover .last a { width:145px !important; }
+#nav7 .last:hover li a, #nav7 .last a:hover .last a { width:124px !important; }
+#nav8 .last:hover li a, #nav8 .last a:hover .last a { width:108px !important; }
+.nav li:hover li a:hover, .nav li a:hover li a:hover { background:#16366b !important; }
+.nav li:hover li.last a { border:0; }
+/**************************************************************************************************************/
+
+#header-search { position:absolute; top:85px; right:20px; width:192px; height:19px; overflow:hidden; background:url(../images/bg-sprite-8.png) no-repeat -350px -40px; }
+#header-search fieldset { border:0; }
+#header-search input { margin:1px 4px 0 0; padding:1px 0 0 3px; width:165px; height:15px; float:left; display:inline; color:#808285; font-size:11px; line-height:11px; overflow:hidden; background:none; border:0; }
+#header-search .btn { margin:0; padding:0; width:20px; height:19px; opacity:0; background:#16366b; cursor:pointer; }
+
+#utilitynav { position:absolute; top:45px; right:20px; margin:0; }
+#utilitynav li { margin:0 7px 0 0; padding:0 8px 0 0; float:left; display:inline; list-style:none; color:#77afcb; font-size:11px; background:url(../images/bg-sprite-8.png) no-repeat 100% -146px; }
+#utilitynav .last { margin:0; padding:0; background:none; }
+#utilitynav a { color:#fff; font-weight:normal; }
+
+#portal { position:absolute; top:4px; left:0; margin:0; width:100%; z-index:70; }
+#portal li { list-style:none; font-size:11px; line-height:15px; }
+#portal a { padding:0 13px 0 0; color:#666; background:url(../images/bg-sprite-8.png) no-repeat 100% -268px; font-weight:normal; }
+#portal .menu { padding:2px 21px 2px 8px; width:230px; display:inline-block; background:url(../images/bg-sprite-8.png) no-repeat 101% -204px; -moz-border-radius:4px 4px 0 0; border-radius:4px 4px 0 0; } /* width:207px;  */
+
+#portal .hover { background-color:#bfbfbf; background-position:101% -235px; }
+#portal .menu-box { padding:8px 4px; width:251px; display:none; text-align:left; background-color:#bfbfbf; background:-moz-linear-gradient(100% 100% 90deg, #a7a6a6, #bfbfbf); background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#bfbfbf), to(#a7a6a6)); -moz-border-radius:0 0 4px 4px; border-radius:0 0 4px 4px; }
+#portal .menu-box a { padding:5px; display:block; color:#fff; font-weight:bold; background:none; }
+#portal .menu-box a:hover { background:#d9d8d8; }
+#portal .menu-box ul { margin:0; }
+#resource-departmentLink { position:absolute; top:2px; left:10px; }
+#resource-exploreLinks { position:absolute; top:0; right:10px; }
+#resource-exploreLinks a { outline:none; font-weight:normal; }
+#resource-exploreLinks a:hover { text-decoration:none; }
+
+
+/* HOME PAGE
+------------------------------------------------------------------------------------- */
+/* Homepage Banner (See generic component styles: .component-banner) */
+#h-banner { height:273px; }
+#h-banner .caption { width:380px; height:273px; line-height:20px; }
+#h-banner .caption div { padding:25px 20px 20px; }
+#h-banner .mask { width:380px; height:273px; }
+
+#h-banner-nomask { border-bottom:4px solid #569bbe; }
+#h-banner-nomask .caption { top:75px; width:366px; color:#fff; font:normal 18px/27px arial,sans-serif; text-align:center; background:#2d84af; }
+#h-banner-nomask .caption div { padding:18px 30px 16px; }
+#h-banner-nomask .caption p { margin:0; }
+
+/* SUBPAGE
+------------------------------------------------------------------------------------- */
+#leftnav { margin:0; padding:9px 0 86px; background:#e2e2e2; }
+#leftnav li { display:block; list-style:none; line-height:15px }
+#leftnav ul { margin:0; }
+#leftnav a { font-weight:normal; padding:4px 5px 5px 29px; display:block; color:#00245d; line-height:20px; border-bottom:1px solid #fff; }
+#leftnav a:hover { color:#fff; text-decoration:none; background-color:#2d84af; border-color:#2d84af; }
+#leftnav .parent a, #leftnav .parent a:hover { background-image:url(../images/bg-subnav-24.png); background-repeat:no-repeat; background-position:20px 11px; }
+#leftnav .on a, #leftnav .on a:hover { color:#fff; background-color:#adadad; border-color:#fff; }
+#leftnav .on li a { color:#00245d; background:none; }
+#leftnav .on li a:hover { background-color:#2d84af; }
+#leftnav .open a, #leftnav .open a:hover { background-position:-280px 11px; }
+#leftnav li .last a, #leftnav li .last a:hover { border:0; }
+#leftnav li li a, #leftnav li li a:hover { padding-left:40px; background-image:none !important; }
+
+#breadcrumb { position:absolute; top:6px; left:0; padding:0 21px; clear:both; color:#676767; font-size:11px; line-height:15px; }
+#breadcrumb ul { margin:0; }
+#breadcrumb li { margin:0 6px 0 0; padding:0 9px 0 0; float:left; display:inline; list-style:none; background:url(../images/bg-sprite-8.png) no-repeat 100% -168px; }
+#breadcrumb .last { margin:0; padding:0; background:none; }
+#breadcrumb a { color:#589bbe; font-weight:normal; }
+
+/* LAYOUTS
+------------------------------------------------------------------------------------- */
+/* LAYOUT DEFAULTS (Applies to all .content layouts */
+.content { position:relative; min-height:100px; }
+.content p { margin:0 0 19px; }
+.content .alt { margin:0; }
+
+/* LAYOUT TEMPLATES (GENERICS) - The site layouts and their required DIVs */
+#layout-homepage { padding:0; }
+#layout-homepage #col1 { padding:0 0 0 20px; width:970px; }
+#layout-homepage #col1 .col { margin:0 40px 0 0; width:290px; }
+#layout-homepage #col1 .h-last { margin:0; }
+
+#layout-full { padding:48px 0 0; min-height:400px; height: auto !important; height: 400px; }
+#layout-full #col1 { padding:0 20px; width:950px; }
+
+#layout-2col { padding:48px 0 0; min-height:400px; height: auto !important; height: 400px; }
+#layout-2col #col1 { margin:0 20px 0 0; width:698px; float:right; }
+#layout-2col #col2 { width:242px; }
+
+#layout-2col-noleftnav { padding:48px 0 0; }
+#layout-2col-noleftnav #col1 { margin:0 30px 0 31px; width:728px; }
+#layout-2col-noleftnav #col2 { width:201px; }
+
+#layout-3col { padding:48px 0 0; min-height:400px; height: auto !important; height: 400px; }
+#layout-3col #col1 { margin:0; width:718px; float:right; }
+#layout-3col #main { margin:0 20px 0 0; width:497px; }
+#layout-3col #sidebar { width:201px; }
+#layout-3col #col2 { width:242px; }
+
+/* LAYOUT SPECIFICS - Interior elements styling (per layout) */
+#layout-homepage #col1 { line-height:20px; }
+
+
+/* FOOTER
+------------------------------------------------------------------------------------- */
+#footer { min-height:20px; color:#666; font:normal 12px/15px arial,sans-serif; background:url(../images/bg-wrap-btm.png) no-repeat 50% 0; }
+#footer a { color:#666; }
+#footer div { position:relative; }
+#footer li { display:inline; list-style:none; }
+#footer .last { margin:0; padding:0; background:none; }
+
+#site-info { padding:22px 0 20px; border-bottom:1px solid #fff; }
+
+#address-social { margin:0 0 10px 0px; text-align:center; }
+#address-social li { margin:0 7px 0 0; }
+#address-social span { padding:0 3px; display:inline-block; }
+
+#footernav { margin:0; text-align:center; }
+#footernav li { margin:0 6px 0 0; padding:0 8px 0 0; background:url(../images/bg-sprite-8.png) no-repeat 100% -107px; }
+
+#ucsd-info { padding:19px 0 20px; font:normal 10px/12px arial,sans-serif; }
+#ucsd-info p { margin:0 0 9px; font:normal 10px/12px arial,sans-serif; text-align:center; }
+#ucsd-info ul { margin:0; text-align:center; }
+#ucsd-info li { margin:0 7px 0 0; padding:0 8px 0 0; background:url(../images/bg-sprite-8.png) no-repeat 100% -107px; }
+
+#logo-ucsd { width:149px; height:19px; display:inline-block; overflow:hidden; background:url(../images/bg-sprite-8.png) no-repeat -350px 0;  }
+#logo-ucsd img { display:none; }
+
+
+/* COMPONENTS (WIDGETS) - [ .component- ] 
+------------------------------------------------------------------------------------- */
+/* Banner w/ Caption (See homepage layouts) */
+.component-banner { position:relative; margin:0 0 16px; overflow:hidden; z-index:1; }
+.component-banner .caption { position:absolute; top:0; left:0; overflow:hidden; z-index:3; }
+.component-banner img { float:left; display:inline; }
+.component-banner .mask { position:absolute; top:0; left:0; background:#fff; overflow:hidden; opacity:.65; z-index:2; }
+.component-banner h1 { color:#00245d; }
+
+/* Image w/ Indented Text (See 3 column layout 'sidebar' feature) */
+.component-feature { background:#e8e8e8; }
+.component-feature .feature-image { padding:0; border-bottom:2px solid #579dbf; }
+.component-feature .feature-image img { float:left; display:inline; }
+.component-feature .feature-text { padding:16px 20px 7px; line-height:20px; }
+.component-feature p { margin:0 0 5px; }
+.component-feature .title { color:#4d4d4f; font:bold 18px/20px arial,sans-serif; }
+
+/* Divsion Homepage 'intro' block with image on left, intro text on right */
+.component-intro { margin:0 0 16px; }
+.component-intro .intro-image { width:513px; float:left; display:inline; }
+.component-intro .intro-text { padding:32px 20px 7px; width:437px; float:left; display:inline; line-height:20px; }
+.component-intro h1 { color:#00245d; font:bold 24px/31px arial,sans-serif; }
+
+/* BUTTON STYLES - [ .btn- ] 
+------------------------------------------------------------------------------------- */
+/* Defaults */
+.btn { position:relative; display:inline-block; cursor:pointer; background:url(../images/bg-sprite-8.png) no-repeat 100% 100px; }
+.btn:hover { text-decoration:none; }
+
+/* Specifics */
+.btn1 { padding:3px 30px 4px 8px; color:#fff !important; font:bold 12px/14px arial,sans-serif; text-transform:uppercase; background-position:100% -314px; }
+
+/* FORMS - [ .form- ] 
+------------------------------------------------------------------------------------- */
+
+/* ICONS - [ .icon- ] 
+------------------------------------------------------------------------------------- */
+/* Default icon styles to use sprited image but have text fallback */
+.icon, .icon span { position:relative; display:inline-block; overflow:hidden; background:url(../images/bg-sprite-8.png) no-repeat 0 100px; }
+.icon:hover { text-decoration:none; }
+.icon span { position:absolute; top:0; left:0; background:url(../images/bg-sprite-8.png) no-repeat 0 100px; cursor:pointer; }
+
+/* Specifics */
+.icon-facebook, .icon-facebook span { width:16px; height:16px; background-position:-275px 0; }
+.icon-twitter, .icon-twitter span { width:16px; height:16px; background-position:-275px -25px; }
+
+/* LIST STYLES - [ .list- ] 
+------------------------------------------------------------------------------------- */
+/* Bio List */
+.list-bio { margin:-3px 0 0; }
+.list-bio li { padding:0 10px 0 0; list-style:none; line-height:20px; }
+.list-bio img { margin:9px 10px 10px 0; float:left; display:inline; }
+
+/* Date List */
+.list-date { margin:0; }
+.list-date li { position:relative; margin:0 0 16px; padding:0; list-style:none; background:none; }
+.list-date span { width:65px; float:left; display:inline; }
+.list-date a { width:225px; float:left; display:inline; }
+
+/* 'Read More' List */
+.list-more { margin:0; }
+.list-more li { margin:0 0 16px; list-style:none; background:none; }
+.list-more p { margin:0; }
+
+/* List w/o Bullets */
+.list-nobull { margin:0; }
+.list-nobull li { list-style:none; }
+
+/* List w/ Circle Bullet */
+.list-circle { margin:0 0 19px 24px; }
+.list-circle li { padding-left:10px; line-height:20px; list-style:none; background:url(../images/bg-circle.png) no-repeat 0 9px; }
+
+/* TABLE STYLES - [ .tbl- ] 
+------------------------------------------------------------------------------------- */
+.tbl-generic { margin:0 0 20px; width:100%; border-collapse:collapse; border:2px solid #f1f0f0; }
+.tbl-generic th { padding:8px 9px 6px; color:#999; font-weight:bold; vertical-align:bottom; }
+.tbl-generic td { padding:11px 9px; vertical-align:top; background:#f1f0f0; border-bottom:1px solid #fff; } 
+.tbl-generic .alt td { background:#e3e2e2; } 
+.tbl-generic .last td { border:0; } 
+.tbl-generic .btn1 { background-position:100% -349px; }
+
+
+/* MISC. CLASSES & IDS
+------------------------------------------------------------------------------------- */
+.clear { clear:both; }
+.col { float:left; display:inline; }
+.floatleft { margin:0 10px 5px 0; float:left; display:inline; }
+.floatright { margin:0 0 5px 10px; float:right; display:inline; }
+.hide { display:none; }
+.last { border:0 !important; }
+.line { padding-bottom:6px; border-bottom:1px solid #d8cfc6; }
+.pint { display:none !important; }		/* This is not a typo. It should say pint and is referenced in not only the css but also the javascript files. Do not rename. */
+.radio, .checkbox { cursor:pointer; }
+.req { color:#ff0000; }
+.show { display:block; }
+.text-center { text-align:center; }
+.text-left { text-align:left; }
+.text-right { text-align:right; }
+
+/* Clearfix */
+.clearfix:after, .content:after, .component-banner:after, .component-feature .feature-image:after, .component-intro:after, .list-bio li:after, .list-date li:after, #footer ul:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+/* PLEASE LEAVE BOTH THESE LINES, FIX FOR IE7 */
+.clearfix, .content, .component-banner, .component-feature .feature-image, .component-intro, .list-bio li, .list-date li, #footer ul { display:inline-block; }
+.clearfix, .content, .component-banner, .component-feature .feature-image, .component-intro, .list-bio li, .list-date li, #footer ul { /*\*/display:block;/**/ }
+
+/* FANCYBOX (JQUERY) OVERLAY CONTROL
+------------------------------------------------------------------------------------- */
+#fancybox-loading { position:fixed; top:50%; left:50%; margin-top:-20px; margin-left:-20px; width:40px; height:40px; display:none; cursor:pointer; overflow:hidden; z-index:1104; }
+#fancybox-loading div { position:absolute; top:0; left:0; width:40px; height:480px; }
+
+#fancybox-overlay { position:fixed; top:0; left:0; bottom:0; right:0; display:none; background:#000; z-index:1100; }
+
+#fancybox-tmp { padding:0; margin:0; border:0; display:none; overflow:auto; }
+
+#fancybox-wrap { position:absolute; top:0; left:0; margin:0; padding:20px; display:none; z-index:1101; }
+
+#fancybox-outer { position:relative; width:100%; height:100%; background:#fff; }
+#fancybox-inner { position:absolute; top:0; left:0; margin:0; padding:0; width:1px; height:1px; outline:none; overflow:hidden; text-align:left; }
+
+#fancybox-hide-sel-frame { position:absolute; top:0; left:0; width:100%; height:100%; background:transparent; }
+
+#fancybox-close { position:absolute; top:-15px; right:-15px; width:30px; height:30px; display:none; cursor:pointer; background-image:url(../images/fancybox.png); background-position:-40px 0; z-index:1103; }
+#fancybox-close:hover { border:0; }
+
+#fancybox_error { margin:0; padding:7px; color:#444; font:normal 12px/20px arial,sans-serif; }
+
+#fancybox-content { padding:0; margin:0; height:auto; width:auto; }
+#fancybox-img { margin:0; padding:0; width:100%; height:100%; line-height:0; vertical-align:top; outline:none; border:none; }
+#fancybox-frame { position:relative; width:100%; height:100%; display:block; border:none; }
+#fancybox-title { position:absolute; bottom:0; left:0; font:normal 11px/13px arial,sans-serif; z-index:1102; }
+
+.fancybox-title-inside { padding:10px 0; color:#333; text-align:center; }
+.fancybox-title-outside { padding-top:5px; color:#fff; text-align:center; font-weight:bold; }
+.fancybox-title-over { color:#999; text-align:left; display:block !important; position:relative; padding:8px 0 0px; height:13px; background:#fff url(../images/bg-white-cover.png) no-repeat 107% -720px; text-align:center; }
+
+#fancybox-title-index { position:absolute; top:8px; left:10px; text-align:left; }
+
+#fancybox-title-wrap { display:inline-block; }
+#fancybox-title-wrap span { height:32px; float:left; }
+
+#fancybox-title-left { padding-left:15px; background:url(../images/fancybox.png) no-repeat -40px -90px; }
+#fancybox-title-main { color:#000; font-weight:bold; line-height:29px; background-image:url(../images/fancybox-x.png); background-position:0 -40px; }
+#fancybox-title-right { padding-left:15px; background:url(../images/fancybox.png) no-repeat -55px -90px; }
+
+#fancybox-left, #fancybox-right { position:absolute; bottom:8px; width:15px; height:12px; display:none; cursor:pointer; outline:none; background:url(../images/bg-white-cover.png) no-repeat 0 0; z-index:1112; }
+#fancybox-left:hover, #fancybox-right:hover { border:0; }
+#fancybox-left { right:26px; background-position:0 -712px; }
+#fancybox-right { right:12px; background-position:0 -736px; }
+
+#fancybox-left-ico, #fancybox-right-ico { position:absolute; top:50%; left:-9999px; margin-top:-7px; width:15px; height:12px; display:block; cursor:pointer; z-index:1102;}
+#fancybox-left-ico { }
+#fancybox-right-ico { }
+
+#fancybox-left:hover, #fancybox-right:hover { visibility:visible; }
+#fancybox-left:hover { background-position:0 -700px; }
+#fancybox-right:hover { background-position:0 -724px; }
+
+.fancy-bg { position:absolute; padding:0; margin:0; border:0; width:20px; height:20px; z-index:1001; }
+#fancy-bg-n { top:-20px; left:0; width:100%; background-image:url(../images/fancybox-x.png); }
+#fancy-bg-ne { top:-20px; right:-20px; background-image:url(../images/fancybox.png); background-position:-40px -162px; }
+#fancy-bg-e { top:0; right:-20px; height:100%; background-image:url(../images/fancybox-y.png); background-position:-20px 0; }
+#fancy-bg-se { bottom:-20px; right:-20px; background-image:url(../images/fancybox.png); background-position:-40px -182px; }
+#fancy-bg-s { bottom:-20px; left:0; width:100%; background-image:url(../images/fancybox-x.png); background-position:0 -20px; }
+#fancy-bg-sw { bottom:-20px; left:-20px; background-image:url(../images/fancybox.png); background-position:-40px -142px; }
+#fancy-bg-w { top:0; left:-20px; height:100%; background-image:url(../images/fancybox-y.png); }
+#fancy-bg-nw { top:-20px; left:-20px; background-image:url(../images/fancybox.png); background-position:-40px -122px; }
+
