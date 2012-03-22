@@ -8,12 +8,34 @@
     <xsl:variable name="leftcolumns" css:select="#portal-column-one"/>
     <xsl:variable name="rightcolumns" css:select="#portal-column-two"/>
 
+    <theme href="./tpl-division-homepage.htm" if="$home_page" />
+
     <theme href="./tpl-division-3col.htm" />
     <notheme if="$ajax_load" />
     <notheme if-content="not($wrapped)" />
 
     <drop css:theme="nav5"
               if-content="not($leftcolumns)" />
+    <rules if="$home_page">
+        <drop css:theme-children=".intro-text" />
+        <after css:content="h1.documentFirstHeading"
+                 css:theme-children=".intro-text" method="raw" />
+        <after css:content=".documentDescription"
+                 css:theme-children=".intro-text" method="raw" />
+        <after css:content=" #parent-fieldname-text"
+                 css:theme-children=".intro-text" method="raw" />
+        <replace css:theme=".list-more" 
+                css:content="#content-core>dl" />
+        <drop css:content=".documentByLine" />
+        <!--
+        <replace css:theme=".list-date" 
+                css:content=".portletEvents dd" />
+        -->
+        <replace css:theme-children="#h-events"
+            css:content-children="#portal-column-one" />
+        <replace css:theme-children="#h-fellowship"
+            css:content-children="#portal-column-two" />
+    </rules>
 <!--
         <rules if-content="$wrapped">
 -->

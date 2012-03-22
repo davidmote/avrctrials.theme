@@ -1,3 +1,12 @@
+
+html {min-width:990px;}
+
+.intro-text .documentDescription, .intro-text #description {
+    color: #666666;
+    font: bold 1.25em "Helvetica Neue",Arial,FreeSans,sans-serif;
+    padding-bottom: 0.25em;
+}
+
 /* Left Navigation
 ------------------------------------------------------------------------------------- */
 dl.portlet {
@@ -20,7 +29,7 @@ dl.portlet ul.navTree {
     line-height:20px; 
 
     font-weight:normal;
-    padding:4px 5px 5px 29px;
+    padding:4px 5px 5px 29px !important;
     display:block; 
 }
 .navTree .navTreeItem a:hover { 
@@ -44,7 +53,7 @@ ul.navTreeLevel1 > .navTreeItem {
 }
 
 ul.navTreeLevel1 > .navTreeItem a {
-    padding-left: 40px;
+    padding-left: 40px !important;
 }
 
 dl.portlet ul.navTreeLevel1 .navTreeItem {
@@ -62,6 +71,9 @@ dl.portlet li {
     margin-bottom: 0px;
 }
 
+dl.portlet ul.navTree a {
+    background-image: none; 
+}
 dl.portlet ul.navTree .navTreeFolderish { 
     background-image:url(../images/bg-subnav-24.png); 
     background-repeat:no-repeat; 
@@ -149,9 +161,12 @@ dl.portletNavigationTree dd.portletItem {
 
 #portal-globalnav .selected a, #portal-globalnav a:hover, #portal-globalnav .selected a:hover {
       background-color:#77afcb; 
-
-
 }
+
+#portal-globalnav ul.submenu a, #portal-globalnav ul.submenu a:hover {
+    border-color: #ADCEDF;
+}
+
 #portal-globalnav li a:hover { 
     zoom:1; 
     color:#16366b; 
@@ -159,8 +174,14 @@ dl.portletNavigationTree dd.portletItem {
 }
 #portal-globalnav li.selected a { color:#16366b; }
 
-#portal-globalnav li ul.submenu a {
+#portal-globalnav li ul.submenu a:link,
+#portal-globalnav li ul.submenu a:hover,
+#portal-globalnav li ul.submenu a:visited {
     color: #fff !important;
+}
+
+#portal-globalnav li ul.submenu li {
+    margin-top: -1px;
 }
 
 #portal-globalnav li ul.submenu a:hover {
@@ -170,6 +191,8 @@ dl.portletNavigationTree dd.portletItem {
 
 ul.submenu {
     width: auto;
+    border-width: 0px;
+    margin-top: -1px;
 }
 /* Breadcrumbs
 ------------------------------------------------------------------------------------- */
@@ -282,3 +305,89 @@ input, td input, select, td select, textarea, td textarea {
 }
 
 .col {width: 100%;}
+
+
+
+
+/* Home Page
+------------------------------------------------------------------------------------- */
+
+#layout-homepage dl dt span.summary a:link ,
+#layout-homepage dl.portlet dd.portletItem a:link,
+#layout-homepage dl dt span.summary a:visited ,
+#layout-homepage dl.portlet dd.portletItem a:visited {
+    background-image: none !important;
+    padding-left: 0px !important;
+    color: #589BBE !important;
+    font-weight: bold;
+}
+#layout-homepage dl.portlet {
+    background: transparent;
+}
+
+#layout-homepage dl.portlet dd a:link {
+    border-bottom: none;
+    float: left;
+    clear: left;
+    padding-left: 0px;
+}
+
+#layout-homepage dl.portlet dd.portletItem  .portletItemDetails {
+    float: right;
+}
+
+#layout-homepage dl.portlet dd.portletFooter {
+    clear: both;
+
+}
+
+#layout-homepage dl.portlet dt,
+#layout-homepage div.portletAssignments div.portletHeader {
+    background: none;
+    border-bottom: 1px solid #D8CFC6;
+    padding: 0px 0px 6px 0px;
+    color: #2D84AF;
+    font: bold 21px/24px arial,sans-serif;
+    margin: 0 0 14px;
+    text-align: left;
+}
+
+#layout-homepage dl.portlet dt a:link,
+#layout-homepage dl.portlet dt  a:hover,
+#layout-homepage dl.portlet dt  a:visited  {
+    color: #2D84AF !important;
+    text-decoration: none;
+    font: bold 21px/24px arial,sans-serif !important;
+    padding: 0px;
+
+}
+
+#layout-homepage dl.portlet dd.portletFooter a:link {
+    background: url("../images/bg-sprite-8.png") no-repeat scroll 100% 100px transparent;
+    background-image: url("../images/bg-sprite-8.png") !important;
+    background-position: 100% -314px;
+    font: bold 12px/14px arial,sans-serif;
+    padding: 3px 30px 4px 8px !important;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+#layout-homepage dl.portlet dd.portletFooter a:link,
+#layout-homepage dl.portlet dd.portletFooter a:visited,
+#layout-homepage dl.portlet dd.portletFooter a:hover {
+    color: #FFFFFF !important;
+    text-decoration:none;    
+}
+
+#layout-homepage dl.portlet {
+padding: 0 0 19px;
+}
+
+.portletEvents .portletFooter {
+    display: none;
+
+}
+
+
