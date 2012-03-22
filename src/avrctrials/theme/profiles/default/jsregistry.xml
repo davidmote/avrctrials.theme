@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts">
+<!--     <javascript
+        id="++theme++avrc.theme.leadtheway/theme-js/jquery.min.js" 
+        cacheable="True"
+        compression="safe"
+        cookable="True"
+        enabled="True"
+        inline="False"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    />
+
+    <javascript
+        id="++theme++avrc.theme.leadtheway/theme-js/jquery.sliderkit.1.5.1.js" 
+        cacheable="True"
+        compression="safe"
+        cookable="True"
+        enabled="True"
+        inline="False"
+    expression="request/HTTP_X_THEME_ENABLED | nothing"
+    /> -->
+
+</object>

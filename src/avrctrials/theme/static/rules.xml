@@ -3,63 +3,148 @@
     xmlns="http://namespaces.plone.org/diazo"
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<!--
+
     <xsl:variable name="wrapped" css:select="#visual-portal-wrapper"/>
     <xsl:variable name="leftcolumns" css:select="#portal-column-one"/>
     <xsl:variable name="rightcolumns" css:select="#portal-column-two"/>
 
-    <theme href="./default.html" />
-    <notheme if="not($wrapped)" />
+    <theme href="./tpl-division-3col.htm" />
     <notheme if="$ajax_load" />
+    <notheme if-content="not($wrapped)" />
 
-    <replace css:theme="base" css:content="base" />
-    <rules if-content="$wrapped">
+    <drop css:theme="nav5"
+              if-content="not($leftcolumns)" />
+<!--
+        <rules if-content="$wrapped">
+-->
         <replace css:theme="title" css:content="title" />
-        
         <drop theme="/html/head/meta" />
         <after content="/html/head/meta" theme-children="/html/head" />
-
         <after
-        content-children="/html/head"
-        theme-children="/html/head"
-        />
-        
+            content-children="/html/head"
+            theme-children="/html/head"
+            />
         <drop theme="/html/head/style" />
         <drop theme="/html/head/script" />
         <drop theme="/html/head/link" />
-        
+
         <merge attributes="class" css:content="body" css:theme="body" />
         <copy attributes="id dir" css:content="body" css:theme="body" />
-        
-        <copy attributes="href title accesskey" css:content="a#portal-logo" css:theme="a#logo" />
-        
-        
-        <replace css:content="#portal-siteactions"
-         css:theme-children="#site-actions" />
-        
+        <copy attributes="href title accesskey" css:content="a#portal-logo" css:theme="a.logo" />
+        <before css:theme-children="head" css:content="base" />
+
+        <replace css:content="#portal-searchbox"
+                 css:theme="#header-search" />
+
         <replace css:content="#portal-globalnav"
-        css:theme-children="#footer-actions"  />
-        
-        <replace css:content-children="#portal-column-one .navTreeLevel0"   css:theme-children="#nav-main > ul" />
-        
-        <after css:content="#portal-column-one .managePortletsLink" css:theme-children="#nav-main" />
-        
-        <drop css:content='a.navTreeFolderish > img' />
-        <drop css:content=".documentByLine" />
+                 css:theme="#nav5" />
+
+        <replace css:content="#portal-breadcrumbs"
+                 css:theme="#breadcrumb" />
+
+        <replace css:content-children="#portal-column-one"
+                 css:theme-children="#col2" />
+
+        <replace css:content-children="#portal-column-content"
+                 css:theme-children="#main"  />
+
+        <drop css:content="#plone-document-byline" />
+
+        <drop css:theme="#footernav" />
+
+        <replace css:content-children="#portal-siteactions"
+                 css:theme-children="#ucsd-info ul"  />
+
+        <replace css:content="#portal-personaltools-wrapper"
+                 css:theme="#utilitynav"  />
+
+        <replace css:content-children="#portal-column-two"
+                 css:theme-children="#sidebar" />
+
+         <strip css:theme="#layout-3col" if-content="not($rightcolumns)" />
+         <strip css:theme="#layout-2col" if-content="$rightcolumns" />
+
+
+<!--
+
+
+    <xsl:variable name="wrapped" css:select="#visual-portal-wrapper"/>
+    <xsl:variable name="leftcolumns" css:select="#portal-column-one"/>
+    <xsl:variable name="rightcolumns" css:select="#portal-column-two"/>
+
+    <theme href="./home.html" if="$home_page" />
+    <theme href="./default.html" />
+    <notheme if="$ajax_load" />
+
+    <before css:theme-children="head" css:content="base" />
+    <rules if-content="$wrapped">
+
+
+        <replace css:content="#portal-personaltools"
+                 css:theme-children=".nav-global ul li" />
+
+
+                 
+        <strip css:theme="#content"
+                if="$home_page" />
+
+        <strip css:content=".portletWrapper"
+                if="$home_page" />
 
         <replace css:content="#portal-column-content"
-         css:theme-children="#content-box"  />
+                 css:theme="#content"  />
         
-        <replace css:theme-children=".sidebar" css:content-children="#portal-column-two>*" />
+        <drop css:content=".documentAuthor" />
+
+        <replace css:content="#portal-searchbox"
+                 css:theme="#searchboxcontainer" />
+
+        <rules if-path="/ front-page/">
+            <replace css:content="#edit-bar" css:theme="#edit-area" />
+
+            <replace css:content-children="#portal-column-one > div:nth-of-type(1) .portletHeader"
+            css:theme-children="#contentfeature1 > h2" />
+
+            <replace css:content-children="#portal-column-one > div:nth-of-type(1) .portletItem"
+            css:theme-children="#contentfeature1 > p" />
+        
+            <replace css:content-children="#portal-column-one > div:nth-of-type(2) .portletHeader"
+            css:theme-children="#contentfeature2 > h2" />
+
+            <replace css:content-children="#portal-column-one > div:nth-of-type(2) .portletItem"
+            css:theme-children="#contentfeature2 > p" />
+        
+            <replace css:content-children="#content h1"  css:theme-children="#contentfeature3 h2" />
+        
+            <replace css:content-children="#content-core"   css:theme-children="#contentfeature3 p" />
+        </rules>
+        
+
+                 
+        <drop css:theme="#contentbox-leftbar"
+              if-content="not($leftcolumns)" />
+              
+        <replace css:content-children="#portal-column-two"
+                 css:theme-children="#contentbox-rightbar" />
+
+        <strip css:theme=".contentbox-full"
+               if-content="$rightcolumns" />
+               
+        <strip css:theme=".contentbox-partial"
+               if-content="not($rightcolumns)" />
+               
+        <drop css:theme="#contentbox-rightbar"
+              if-content="not($rightcolumns)" />
 
         <drop attributes="class" css:content=".cell" />
-        
-        <after css:content="#portal-personaltools"
-        css:theme-children="#footer-actions"  />
-        
-        <after css:content="#visual-portal-wrapper div.row script" css:theme-children="body" />
-        <after css:content="#visual-portal-wrapper div.row noscript" css:theme-children="body" />
-        
+        <replace css:content="#portal-siteactions"
+                 css:theme="#footer-actions" />
+
+        <after css:content="#visual-portal-wrapper script"
+               css:theme-children="body" />
     </rules>
+</rules>
+    
+
 -->
 </rules>
