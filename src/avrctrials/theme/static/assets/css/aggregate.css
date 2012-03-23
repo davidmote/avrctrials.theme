@@ -154,10 +154,20 @@ dl.portletNavigationTree dd.portletItem {
     cursor:pointer;
       background-color:#77afcb; 
  }
+
+#portal-globalnav li a {
+    height: auto;
+    min-height: 25px;
+    padding: 10px 0;
+}
+
 #portal-globalnav > li > a {
         text-transform:uppercase; 
-
+        height: 25px;
+        padding : 10px 4em 0px;
 }
+
+
 
 #portal-globalnav .selected a, #portal-globalnav a:hover, #portal-globalnav .selected a:hover {
       background-color:#77afcb; 
@@ -165,6 +175,8 @@ dl.portletNavigationTree dd.portletItem {
 
 #portal-globalnav ul.submenu a, #portal-globalnav ul.submenu a:hover {
     border-color: #ADCEDF;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 #portal-globalnav li a:hover { 
@@ -307,7 +319,9 @@ input, td input, select, td select, textarea, td textarea {
 .col {width: 100%;}
 
 
-
+div.managePortletsLink, a.managePortletsFallback {
+    clear: both;
+}
 
 /* Home Page
 ------------------------------------------------------------------------------------- */
@@ -332,20 +346,32 @@ input, td input, select, td select, textarea, td textarea {
     padding-left: 0px;
 }
 
+#layout-homepage .portletEvents dd.portletItem a:link {
+    max-width: 130px;
+}
+
 #layout-homepage dl.portlet dd.portletItem  .portletItemDetails {
     float: right;
 }
 
+#layout-homepage dl.portlet dd.portletItem {
+    padding: 0px;
+}
+
 #layout-homepage dl.portlet dd.portletFooter {
     clear: both;
+    padding: 0px;
+}
 
+#layout-homepage #h-news dd {
+margin: 0 0 16px;
 }
 
 #layout-homepage dl.portlet dt,
 #layout-homepage div.portletAssignments div.portletHeader {
     background: none;
     border-bottom: 1px solid #D8CFC6;
-    padding: 0px 0px 6px 0px;
+    padding: 0px;
     color: #2D84AF;
     font: bold 21px/24px arial,sans-serif;
     margin: 0 0 14px;
@@ -358,7 +384,7 @@ input, td input, select, td select, textarea, td textarea {
     color: #2D84AF !important;
     text-decoration: none;
     font: bold 21px/24px arial,sans-serif !important;
-    padding: 0px;
+    padding: 0px 0px 6px !important;
 
 }
 
@@ -387,6 +413,17 @@ padding: 0 0 19px;
 
 .portletEvents .portletFooter {
     display: none;
+
+}
+
+.component-intro .intro-text {
+    height: 237px;
+    overflow: hidden;
+
+}
+
+.intro-text .documentDescription {
+    margin-bottom: 14px;
 
 }
 

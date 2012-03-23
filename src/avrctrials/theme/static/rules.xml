@@ -14,78 +14,75 @@
     <notheme if="$ajax_load" />
     <notheme if-content="not($wrapped)" />
 
-    <drop css:theme="nav5"
-              if-content="not($leftcolumns)" />
-    <rules if="$home_page">
-        <drop css:theme-children=".intro-text" />
-        <after css:content="h1.documentFirstHeading"
-                 css:theme-children=".intro-text" method="raw" />
-        <after css:content=".documentDescription"
-                 css:theme-children=".intro-text" method="raw" />
-        <after css:content=" #parent-fieldname-text"
-                 css:theme-children=".intro-text" method="raw" />
-        <replace css:theme=".list-more" 
-                css:content="#content-core>dl" />
-        <drop css:content=".documentByLine" />
-        <!--
-        <replace css:theme=".list-date" 
-                css:content=".portletEvents dd" />
-        -->
-        <replace css:theme-children="#h-events"
-            css:content-children="#portal-column-one" />
-        <replace css:theme-children="#h-fellowship"
-            css:content-children="#portal-column-two" />
-    </rules>
-<!--
-        <rules if-content="$wrapped">
--->
-        <replace css:theme="title" css:content="title" />
-        <drop theme="/html/head/meta" />
-        <after content="/html/head/meta" theme-children="/html/head" />
-        <after
-            content-children="/html/head"
-            theme-children="/html/head"
-            />
-        <drop theme="/html/head/style" />
-        <drop theme="/html/head/script" />
-        <drop theme="/html/head/link" />
+    <rules if-content="$wrapped">
 
-        <merge attributes="class" css:content="body" css:theme="body" />
-        <copy attributes="id dir" css:content="body" css:theme="body" />
-        <copy attributes="href title accesskey" css:content="a#portal-logo" css:theme="a.logo" />
-        <before css:theme-children="head" css:content="base" />
+            <drop css:theme="nav5"
+                      if-content="not($leftcolumns)" />
+            <rules if="$home_page">
+                <drop css:theme-children=".intro-text" />
+                <after css:content="h1.documentFirstHeading"
+                         css:theme-children=".intro-text" method="raw" />
+                <after css:content=".documentDescription"
+                         css:theme-children=".intro-text" method="raw" />
+                <after css:content=" #parent-fieldname-text"
+                         css:theme-children=".intro-text" method="raw" />
+                <replace css:theme=".list-more" 
+                        css:content="#content-core>dl" />
+                <drop css:content=".documentByLine" />
+                <replace css:theme-children="#h-events"
+                    css:content-children="#portal-column-one" />
+                <replace css:theme-children="#h-fellowship"
+                    css:content-children="#portal-column-two" />
+                <before css:theme-children="#col1"
+                    css:content="edit-bar" />
+            </rules>
+            <replace css:theme="title" css:content="title" />
+            <drop theme="/html/head/meta" />
+            <after content="/html/head/meta" theme-children="/html/head" />
+            <after
+                content-children="/html/head"
+                theme-children="/html/head"
+                />
+            <drop theme="/html/head/style" />
+            <drop theme="/html/head/script" />
+            <drop theme="/html/head/link" />
 
-        <replace css:content="#portal-searchbox"
-                 css:theme="#header-search" />
+            <merge attributes="class" css:content="body" css:theme="body" />
+            <copy attributes="id dir" css:content="body" css:theme="body" />
+            <copy attributes="href title accesskey" css:content="a#portal-logo" css:theme="a.logo" />
+            <before css:theme-children="head" css:content="base" />
 
-        <replace css:content="#portal-globalnav"
-                 css:theme="#nav5" />
+            <replace css:content="#portal-searchbox"
+                     css:theme="#header-search" />
 
-        <replace css:content="#portal-breadcrumbs"
-                 css:theme="#breadcrumb" />
+            <replace css:content="#portal-globalnav"
+                     css:theme="#nav5" />
 
-        <replace css:content-children="#portal-column-one"
-                 css:theme-children="#col2" />
+            <replace css:content="#portal-breadcrumbs"
+                     css:theme="#breadcrumb" />
 
-        <replace css:content-children="#portal-column-content"
-                 css:theme-children="#main"  />
+            <replace css:content-children="#portal-column-one"
+                     css:theme-children="#col2" />
 
-        <drop css:content="#plone-document-byline" />
+            <replace css:content-children="#portal-column-content"
+                     css:theme-children="#main"  />
 
-        <drop css:theme="#footernav" />
+            <drop css:content="#plone-document-byline" />
 
-        <replace css:content-children="#portal-siteactions"
-                 css:theme-children="#ucsd-info ul"  />
+            <drop css:theme="#footernav" />
 
-        <replace css:content="#portal-personaltools-wrapper"
-                 css:theme="#utilitynav"  />
+            <replace css:content-children="#portal-siteactions"
+                     css:theme-children="#ucsd-info ul"  />
 
-        <replace css:content-children="#portal-column-two"
-                 css:theme-children="#sidebar" />
+            <replace css:content="#portal-personaltools-wrapper"
+                     css:theme="#utilitynav"  />
 
-         <strip css:theme="#layout-3col" if-content="not($rightcolumns)" />
-         <strip css:theme="#layout-2col" if-content="$rightcolumns" />
+            <replace css:content-children="#portal-column-two"
+                     css:theme-children="#sidebar" />
 
+             <strip css:theme="#layout-3col" if-content="not($rightcolumns)" />
+             <strip css:theme="#layout-2col" if-content="$rightcolumns" />
+      </rules>
 
 <!--
 
