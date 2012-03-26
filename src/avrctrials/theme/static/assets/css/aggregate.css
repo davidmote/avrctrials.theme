@@ -252,28 +252,16 @@ ul.submenu {
 input.searchField {
     -moz-appearance: inherit;
 }
-
-
-#portal-personaltools {
-    z-index:999;
-    background: transparent;
+/* alternative navigation
+------------------------------------------------------------------------------------- */
+#utilitynav>:last-child {
+    background-image: none;
 }
 
-#portal-personaltools dd {
-    background-color: #2C83AE;
+#ucsd-info>ul>:last-child {
+    background-image: none;
 }
 
-#portal-personaltools-wrapper {
-        margin: 0;
-    position: absolute;
-    right: 20px;
-    top: 45px;
-}
-
-#portal-personaltools a:link,
-#portal-personaltools a:visited {
-    color: white;
-}
 /* Content
 ------------------------------------------------------------------------------------- */
 
