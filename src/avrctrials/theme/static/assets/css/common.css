@@ -8,10 +8,11 @@ small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, l
 fieldset, form, label, legend, caption { margin:0; padding:0; }
 
 table, th, td { margin:0; }
-
+/*
 html { min-height:100%; padding:0 0 1px; }
-
-body { min-width:990px; color:#333; font:normal 12px/24px arial,sans-serif; text-align:center; background:#e8e8e8; }
+min-width:990px; text-align:center; 
+*/
+body { color:#333; font:normal 12px/24px arial,sans-serif; background:#e8e8e8; }
 table, th, td { color:#333; font:normal 12px/15px arial,sans-serif; }
 input, td input, select, td select, textarea, td textarea { color:#ccc; font:normal 12px/15px arial,sans-serif; }
 label[for] { cursor:pointer; }
